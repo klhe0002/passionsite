@@ -1,0 +1,311 @@
+/*************** Reset *********************/
+* {
+  margin: 0rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  align-self: stretch;
+  object-fit: cover;
+}
+.fade-in {
+  opacity: 0; /* Start gennemsigtig */
+  transform: translateY(10px); /* Flyt lidt ned */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Transition effekt */
+}
+
+.fade-in.loaded {
+  opacity: 1; /* Synlig */
+  transform: translateY(0); /* Tilbage til udgangspunkt */
+}
+
+/************ style ***********/
+
+body {
+  background-color: #e1e1d9;
+}
+
+h1 {
+  font-family: "Barrio", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: medium;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+p {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: small;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tekst_box_1 {
+  padding-top: 70px;
+}
+
+.logo {
+  width: 20%;
+}
+/************* menu ************/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #260404;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 75px;
+}
+
+.menu a {
+  padding: 0px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: center;
+  color: #ffffff;
+}
+
+.menu a:hover {
+  color: #ffffff;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #eeee22;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+    text-align: center;
+  }
+
+  nav.active .menu a {
+    font-size: 80px;
+  }
+
+  .menu a {
+    color: #000000;
+    height: 100svh;
+  }
+  .menu a:hover {
+    color: #000000;
+  }
+}
+/********* layout ***********/
+
+.underoverskrift_2 {
+  padding-top: 56px;
+  padding-bottom: 30px;
+}
+
+.underoverskrift_3 {
+  padding-top: 12px;
+  padding-bottom: 30px;
+}
+
+.grid1_1_1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+}
+
+.billede_1,
+.billede_2,
+.billede_3,
+.billede_4,
+.billede_5 {
+  padding: 10px;
+  height: 225px;
+}
+
+.lottie {
+  position: absolute;
+  position: absolute;
+  top: 2%;
+  left: 19%;
+  pointer-events: none;
+}
+
+.videoer {
+  padding-left: 10px;
+}
+
+.lauras_verksted {
+  position: absolute;
+  top: 124%;
+  left: 1%;
+  font-weight: 800;
+  color: #ffffff;
+}
+@media only screen and (min-width: 750px) {
+  .lauras_verksted {
+    top: 150%;
+    left: 53%;
+  }
+
+  .lottie {
+    top: 40%;
+    left: 40%;
+  }
+
+  .logo {
+    width: 6%;
+  }
+
+  .underoverskrift_2,
+  .underoverskrift_3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 50px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  h2 {
+    font-size: large;
+    text-align: left;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  p {
+    font-size: medium;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .grid1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tekst_box_1 {
+    display: grid;
+    grid-column: 1/2;
+  }
+
+  .billede_1,
+  .billede_2,
+  .billede_3,
+  .billede_4,
+  .billede_5 {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+  }
+  .grid1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-self: center;
+  }
+
+  .billede_2 {
+    display: grid;
+    grid-column: 1/1;
+    grid-row: 1/3;
+  }
+
+  .billede_3 {
+    display: grid;
+    grid-column: 4/2;
+  }
+
+  .videoer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .video_1,
+  .video_2 {
+    text-align: center;
+  }
+}
